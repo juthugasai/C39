@@ -69,9 +69,13 @@ class Game {
         y = displayHeight - allPlayers[plr].distance;
         cars[index-1].x = x;
         cars[index-1].y = y;
-
-        if (index === player.index){
+        // identifying the current player in the game
+        if (index === player.index){ 
           cars[index - 1].shapeColor = "red";
+          fill("red");
+          strokeWeight(10);
+          ellipse(x,y,60,60);
+          
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }
